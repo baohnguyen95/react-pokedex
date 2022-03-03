@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import Pokemon from './Pokemon';
 
 function PokeFeed() {
@@ -7,10 +8,8 @@ function PokeFeed() {
   const getPokemons = async () => {
     const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151');
     const data = await res.json();
-    console.log(data);
     setPokemons(data.results);
   }
-
 
   useEffect(() => {
     getPokemons();
@@ -23,8 +22,9 @@ function PokeFeed() {
     pokeArray.push(<Pokemon name={pokemons[pokemon].name} img={image} key={pokemon + 1} />);
   }
   return (
-    <div class="flex flex-col items-center">
-      {pokeArray};
+    <div class="flex justify-center">
+      {pokeArray[0]}
+      {/* <Pokemon name={pokemons[0].name} img={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png`} key={1} /> */}
     </div>
   )
 }
