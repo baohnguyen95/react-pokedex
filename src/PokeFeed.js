@@ -23,7 +23,7 @@ function PokeFeed() {
     pokeArray.push(<Pokemon name={pokemons[pokemon].name} img={image} key={pokemon + 1} />);
   }
   return (
-    <div>
+    <div class="flex flex-col items-center">
       {pokeArray};
     </div>
   )

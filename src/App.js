@@ -4,8 +4,8 @@ import PokeFeed from './PokeFeed';
 
 function App() {
   return (
-    <div className="pokefeed">
-      <h1>Pokedex</h1>
+    <div>
+      <h1 class="text-3xl font-bold text-center">Pokedex</h1>
       <PokeFeed />
     </div>
   );
